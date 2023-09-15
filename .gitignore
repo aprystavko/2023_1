@@ -9,7 +9,7 @@
 
 # IntelliJ IDEA project files
 .idea/
-.githubKey.pub
+githubKey.pub
 
 # Logs
 *.log
