@@ -1,4 +1,4 @@
-package lesson2;
+package starter.lesson2;
 
 public class BasicTypes {
     public static void main(String[] args) {

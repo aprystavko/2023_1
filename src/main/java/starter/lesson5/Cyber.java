@@ -1,4 +1,4 @@
-package lesson5;
+package starter.lesson5;
 
 public class Cyber {
     static int secretKey = 0b1010101011111111;

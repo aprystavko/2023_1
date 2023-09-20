@@ -1,4 +1,4 @@
-package lesson6;
+package starter.lesson6;
 
 public class DoWhile {
     public static void main(String[] args) {

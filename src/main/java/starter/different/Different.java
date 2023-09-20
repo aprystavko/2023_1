@@ -1,4 +1,4 @@
-package different;
+package starter.different;
 
 public class Different {
     public static void main(String[] args) {
