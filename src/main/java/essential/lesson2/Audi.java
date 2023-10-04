@@ -1,6 +1,8 @@
 package essential.lesson2;
 
 public class Audi extends Car {
+    static int year = 2023;
+
     public Audi(int speed, int price, String model) {
         super(speed, price, model);
     }
@@ -10,5 +12,6 @@ public class Audi extends Car {
         System.out.println("Price: " + audi.getPrice() + "\nMax speed: " + audi.getSpeed() + "\nModel: "
                 + audi.getModel());
         audi.sound();
+        System.out.println(year);
     }
 }
