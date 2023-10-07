@@ -6,6 +6,7 @@
 *.zip
 *.tar.gz
 *.rar
+*.exe
 
 # IntelliJ IDEA project files
 .idea/
@@ -18,6 +19,7 @@ githubKey.pub
 /target/
 /build/
 /out/
+drivers/
 
 # Operating System Files
 .DS_Store
@@ -30,3 +32,4 @@ Thumbs.db
 hs_err_pid*
 replay_pid*
 .iml
+/src/drivers/
