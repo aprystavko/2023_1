@@ -1,19 +1,21 @@
-package selenium.lesson1;
+package selenium.section3;
 
+import selenium.baseTest.ThreadSleep;
+import selenium.baseTest.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import selenium.baseTest.WebDriver;
 
 public class DriverMethods {
 
     public static void main(String[] args) {
+        ThreadSleep threadSleep = new ThreadSleep();
         org.openqa.selenium.WebDriver driver = WebDriver.getWebDriver("chrome");
         driver.get("http://google.com");
         WebElement searchInput = driver.findElement(By.xpath("//*[@id=\"APjFqb\"]"));
         searchInput.click();
         searchInput.clear();
-        searchInput.sendKeys("Hello");
+        searchInput.sendKeys("Hello cruel world");
         searchInput.sendKeys(Keys.ENTER);
 
         String currentUrl = driver.getCurrentUrl();
@@ -21,30 +23,15 @@ public class DriverMethods {
         System.out.println("Title: " + currentTitle + "; " + "URL: " + currentUrl);
         System.out.println(driver.getWindowHandle());
         System.out.println(driver.getWindowHandles());
-//        System.out.println(driver.getPageSource());
+        System.out.println(driver.manage().window().getSize());
 
-        // Create an instance of the Actions class
-        Actions actions = new Actions(driver);
+        threadSleep.sleep(1000);
+        driver.get("https://blog.testproject.io/");
+        System.out.println(driver.getTitle());
 
-        // Simulate pressing "Ctrl" (or "Command" on Mac) + "t" to open a new tab
-        actions.keyDown(Keys.CONTROL).sendKeys("t").keyUp(Keys.CONTROL).build().perform();
+        threadSleep.sleep(2000);
 
-        // Switch to the new tab (by switching to the last window handle)
-        for (String handle : driver.getWindowHandles()) {
-            driver.switchTo().window(handle);
-        }
-
-        // Navigate to a different website in the new tab
-        driver.get("https://www.example.com");
-
-
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        driver.close();
         WebDriver.closeWebDriver();
     }
 }

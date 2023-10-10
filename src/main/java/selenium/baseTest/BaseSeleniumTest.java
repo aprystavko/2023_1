@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 public class BaseSeleniumTest {
 
     public static void main(String[] args) {
+        ThreadSleep threadSleep = new ThreadSleep();
         org.openqa.selenium.WebDriver driver = WebDriver.getWebDriver("chrome");
         driver.get("http://teststore.automationtesting.co.uk/");
         WebElement searchInput = driver.findElement(By.xpath("//*[@id=\"search_widget\"]/form/input[2]"));
@@ -15,11 +16,7 @@ public class BaseSeleniumTest {
         searchInput.sendKeys("Hello");
         searchInput.sendKeys(Keys.ENTER);
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        threadSleep.sleep(2000);
 
         WebDriver.closeWebDriver();
     }

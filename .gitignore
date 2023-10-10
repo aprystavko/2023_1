@@ -7,6 +7,9 @@
 *.tar.gz
 *.rar
 *.exe
+src/main/java/selenium/section4/Password.java
+src/main/java/selenium/section4/Password.java
+/src/main/java/selenium/section4/Password.java
 
 # IntelliJ IDEA project files
 .idea/

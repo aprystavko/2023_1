@@ -1,9 +1,10 @@
 package selenium.baseTest;
 
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriver {
     private static org.openqa.selenium.WebDriver webDriver;
