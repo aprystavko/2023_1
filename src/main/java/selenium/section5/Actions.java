@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
+
 public class Actions {
     private final org.openqa.selenium.WebDriver driver;
 
@@ -13,6 +14,10 @@ public class Actions {
 
     public boolean checkboxStatus(String checkboxLocator) {
         return driver.findElement(By.cssSelector(checkboxLocator)).isSelected();
+    }
+
+    public boolean isElementVisibleByCssLocator(String cssLocator) {
+        return driver.findElement(By.cssSelector(cssLocator)).isDisplayed();
     }
 
     public boolean buttonStatus(String buttonLocator) {
