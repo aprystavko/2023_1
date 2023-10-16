@@ -1,16 +1,16 @@
 package selenium.section6;
 
 import selenium.baseTest.WebDriver;
-import selenium.section5.Actions;
+import selenium.section5.ActionsWithElements;
 
 public class ImplicitWait {
     public static void main(String[] args) {
         org.openqa.selenium.WebDriver driver = WebDriver.getWebDriver("chrome");
-        Actions actions = new Actions(driver);
+        ActionsWithElements actionsWithElements = new ActionsWithElements(driver);
 
         driver.get("https://automationtesting.co.uk/loader.html");
-        System.out.println(actions.buttonStatus("[onclick]"));
-        actions.clickOnButton("[onclick]");
+        System.out.println(actionsWithElements.buttonStatus("[onclick]"));
+        actionsWithElements.clickOnButton("[onclick]");
 
         WebDriver.closeWebDriver();
     }

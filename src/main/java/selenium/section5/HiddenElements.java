@@ -7,11 +7,11 @@ public class HiddenElements {
     public static void main(String[] args) {
         ThreadSleep threadSleep = new ThreadSleep();
         org.openqa.selenium.WebDriver driver = WebDriver.getWebDriver("chrome");
-        Actions actions = new Actions(driver);
+        ActionsWithElements actionsWithElements = new ActionsWithElements(driver);
 
         driver.get("https://automationtesting.co.uk/hiddenElements.html");
-        boolean paragraph1 = actions.isElementVisibleByCssLocator("div#main  p");
-        boolean paragraph2 = actions.isElementVisibleByCssLocator("#main [class] p:nth-child(3)");
+        boolean paragraph1 = actionsWithElements.isElementVisibleByCssLocator("div#main  p");
+        boolean paragraph2 = actionsWithElements.isElementVisibleByCssLocator("#main [class] p:nth-child(3)");
         System.out.println(paragraph1);
         System.out.println(paragraph2);
         threadSleep.sleep(2000);

@@ -13,7 +13,7 @@ public class ExplicitWait {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         options.addArguments("--start-maximized");
         WebDriver driver = new ChromeDriver(options);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 3);
 
         driver.get("https://automationtesting.co.uk/loader.html");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button#loaderBtn")));

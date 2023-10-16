@@ -2,13 +2,14 @@ package selenium.section5;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class Actions {
+public class ActionsWithElements {
     private final org.openqa.selenium.WebDriver driver;
 
-    public Actions(WebDriver driver) {
+    public ActionsWithElements(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -31,6 +32,15 @@ public class Actions {
             System.out.println("Click on checkbox: " + checkboxLocator);
         } else {
             System.out.println("Can't uncheck");
+        }
+    }
+
+    public void clickOnElement(WebElement locator) {
+        if (locator.isDisplayed() && locator.isEnabled()) {
+            locator.click();
+            System.out.println("Click on element: " + locator);
+        } else {
+            System.out.println("Can't click on element: " + locator);
         }
     }
 

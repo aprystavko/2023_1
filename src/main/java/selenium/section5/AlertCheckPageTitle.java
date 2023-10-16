@@ -7,10 +7,10 @@ public class AlertCheckPageTitle {
     public static void main(String[] args) {
         ThreadSleep threadSleep = new ThreadSleep();
         org.openqa.selenium.WebDriver driver = WebDriver.getWebDriver("chrome");
-        Actions actions = new Actions(driver);
+        ActionsWithElements actionsWithElements = new ActionsWithElements(driver);
 
         driver.get("https://automationtesting.co.uk/popups.html");
-        actions.clickOnButton("[onclick='alertTrigger\\(\\)']");
+        actionsWithElements.clickOnButton("[onclick='alertTrigger\\(\\)']");
         driver.switchTo().alert().accept();
         threadSleep.sleep(2000);
 

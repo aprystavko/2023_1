@@ -1,6 +1,7 @@
 package selenium.baseTest;
 
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -25,8 +26,10 @@ public class WebDriver {
             if (browser.equalsIgnoreCase("chrome")) {
                 System.setProperty("webdriver.chrome.driver", CHROME_ULR);
                 options.addArguments("--start-maximized");
+                options.setPageLoadStrategy(PageLoadStrategy.NONE);
+
                 webDriver = new ChromeDriver(options);
-                webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             } else if (browser.equalsIgnoreCase("firefox")) {
                 System.setProperty("webdriver.gecko.driver", GECKO_ULR);
                 webDriver = new FirefoxDriver();

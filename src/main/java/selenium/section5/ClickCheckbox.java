@@ -7,14 +7,14 @@ public class ClickCheckbox {
     public static void main(String[] args) {
         ThreadSleep threadSleep = new ThreadSleep();
         org.openqa.selenium.WebDriver driver = WebDriver.getWebDriver("chrome");
-        Actions actions = new Actions(driver);
+        ActionsWithElements actionsWithElements = new ActionsWithElements(driver);
 
         driver.get("https://automationtesting.co.uk/dropdown.html");
         System.out.println();
-        actions.clickOnCheckbox("[for='cb_red']");
-        actions.clickOnCheckbox("[for='cb_green']");
-        actions.clickOnCheckbox("[for='cb_red']");
-        actions.clickOnCheckbox("[for='cb_red']");
+        actionsWithElements.clickOnCheckbox("[for='cb_red']");
+        actionsWithElements.clickOnCheckbox("[for='cb_green']");
+        actionsWithElements.clickOnCheckbox("[for='cb_red']");
+        actionsWithElements.clickOnCheckbox("[for='cb_red']");
 
         threadSleep.sleep(2000);
 
