@@ -25,7 +25,8 @@ public class WebDriver {
         if (webDriver == null) {
             if (browser.equalsIgnoreCase("chrome")) {
                 System.setProperty("webdriver.chrome.driver", CHROME_ULR);
-                options.addArguments("--start-maximized");
+                options.addArguments("--start-maximized", "--disable-infobars");
+//                options.addArguments("--disable-infobars");
                 options.setPageLoadStrategy(PageLoadStrategy.NONE);
 
                 webDriver = new ChromeDriver(options);

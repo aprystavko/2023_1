@@ -25,6 +25,7 @@ public class BrowserTabs {
             System.out.println(handle);
         }
         driver.switchTo().window(tabs.get(0));
+        driver.quit();
     }
 
 }
