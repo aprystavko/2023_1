@@ -16,8 +16,6 @@ public class HiddenElements {
         System.out.println(paragraph2);
         threadSleep.sleep(2000);
 
-
-
         WebDriver.closeWebDriver();
     }
 }

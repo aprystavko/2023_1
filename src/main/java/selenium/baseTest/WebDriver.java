@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriver {
@@ -25,8 +27,15 @@ public class WebDriver {
         if (webDriver == null) {
             if (browser.equalsIgnoreCase("chrome")) {
                 System.setProperty("webdriver.chrome.driver", CHROME_ULR);
-                options.addArguments("--start-maximized", "--disable-infobars");
-//                options.addArguments("--disable-infobars");
+                options.addArguments("--start-maximized");
+                // start browser session in incognito
+                //  options.addArguments("--incognito");
+                // remove "Chrome is being controlled by automated test software."
+                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+                // set download directory
+                Map<String, Object> prefs = new HashMap<String, Object>();
+                prefs.put("download.default_directory", "/src/main/resources");
+                options.setExperimentalOption("prefs", prefs);
                 options.setPageLoadStrategy(PageLoadStrategy.NONE);
 
                 webDriver = new ChromeDriver(options);

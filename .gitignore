@@ -8,7 +8,6 @@
 *.rar
 *.exe
 src/main/java/selenium/section4/Password.java
-src/main/java/selenium/section4/Password.java
 /src/main/java/selenium/section4/Password.java
 
 # IntelliJ IDEA project files
@@ -17,12 +16,15 @@ githubKey.pub
 
 # Logs
 *.log
+*.png
 
 # Build output
 /target/
 /build/
 /out/
 drivers/
+/logs
+/logs/screenshots
 
 # Operating System Files
 .DS_Store
