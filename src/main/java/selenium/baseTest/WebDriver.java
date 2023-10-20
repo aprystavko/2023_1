@@ -18,9 +18,6 @@ public class WebDriver {
     private final static String GECKO_ULR = DRIVERS_ULR + "geckodriver.exe";
     private final static String EDGE_ULR = DRIVERS_ULR + "msedgedriver.exe";
 
-    public WebDriver(ChromeOptions options) {
-    }
-
     public static org.openqa.selenium.WebDriver getWebDriver(String browser) {
         ChromeOptions options = new ChromeOptions();
 
@@ -39,7 +36,7 @@ public class WebDriver {
                 options.setPageLoadStrategy(PageLoadStrategy.NONE);
 
                 webDriver = new ChromeDriver(options);
-                webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+                webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             } else if (browser.equalsIgnoreCase("firefox")) {
                 System.setProperty("webdriver.gecko.driver", GECKO_ULR);
                 webDriver = new FirefoxDriver();
@@ -55,7 +52,7 @@ public class WebDriver {
 
     public static void closeWebDriver() {
         if (webDriver != null) {
-            webDriver.quit();
+            webDriver.close();
             webDriver = null;
         }
     }
